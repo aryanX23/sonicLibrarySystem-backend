@@ -19,7 +19,7 @@ const store= new MongoDBstore({
     collections: process.env.COLLECTION
 });
 app.use(cors({
-    origin:`http://localhost:${process.env.ORIGIN_PORT}`,
+	origin:'http://aryan-rai.me',
     credentials: true
 }));
 app.use(bodyParser.json());
@@ -111,7 +111,7 @@ app.get('/',(req,res)=>{
     res.send("O.K.");
 });
 
-mongoose.connect(`mongodb://localhost:27017/ecs`).then(result=>{
+mongoose.connect(`mongodb+srv://aryanX23:qwerty12345@elite.ajw4ifm.mongodb.net/ecs?retryWrites=true&w=majority`).then(result=>{
     const server = app.listen(process.env.PORT,()=>{
         console.log(`Server is sucessfully running on port ${process.env.PORT} !`);
     });
