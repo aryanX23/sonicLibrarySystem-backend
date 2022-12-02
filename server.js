@@ -19,7 +19,7 @@ const store= new MongoDBstore({
     collections: process.env.COLLECTION
 });
 app.use(cors({
-	origin:'http://aryan-rai.me',
+	origin: process.env.ORIGIN_URI,
     credentials: true
 }));
 app.use(bodyParser.json());
